@@ -1,0 +1,15 @@
+@import _root_.de.umass.lastfm._
+@(title: String, artists: Iterable[Artist])(implicit assetsFinder: AssetsFinder)
+
+@main(title) {
+<h3>@title</h3>
+<ul>
+@for(artist <- artists) {
+    <li>
+        <div class="artist">
+            <p>@artist.getName</p>
+        </div>
+    </li>
+}
+</ul>
+}

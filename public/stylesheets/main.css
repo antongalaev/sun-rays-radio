@@ -1,0 +1,52 @@
+@font-face {
+font-family: "yikatu";
+src: url(/assets/fonts/yikatu.ttf);
+}
+
+@font-face {
+font-family: "runic";
+src: url(/assets/fonts/runic.ttf);
+}
+
+
+body {
+    font-family: "yikatu", "runic";
+    background-image: url(/assets/images/paper.jpg);
+    background-size: 100% 100%;
+}
+
+.album {
+    margin: auto;
+    padding: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+h1 {
+    font-size: 7em;
+}
+
+h3 {
+    font-size: 4em;
+}
+
+.biglink {
+   font-size: 3em;
+}
+
+.link {
+   font-size: 2.5em;
+}
+
+.smalllink {
+   font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+

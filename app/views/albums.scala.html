@@ -1,0 +1,18 @@
+@import _root_.de.umass.lastfm._
+@(title: String, albums: Iterable[Album])(implicit assetsFinder: AssetsFinder)
+
+@main(title) {
+<h3>@title</h3>
+@for(album <- albums) {
+<div class="album">
+    @defining(album.getImageURL(ImageSize.EXTRALARGE)) { picture =>
+        @if(picture.isEmpty) {
+            <img src="@assetsFinder.path("images/empty.jpg")">
+        } else {
+            <img src="@picture" alt="@album.getName">
+        }
+    }
+    <p>@album.getArtist - @album.getName</p>
+</div>
+}
+}

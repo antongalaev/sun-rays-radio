@@ -1,0 +1,16 @@
+@(title: String)(content: Html)(implicit assetsFinder: AssetsFinder)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@assetsFinder.path("stylesheets/main.css")">
+        <link rel="icon" type="image/png" href="@assetsFinder.path("images/sun-favicon.png")">
+        <link rel="shortcut icon" type="image/png" href="@assetsFinder.path("images/sun-favicon.png")">
+        <script src="@assetsFinder.path("javascripts/hello.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    <h1><a href="/">Sun Rays Radio</a></h1>
+     @content
+    </body>
+</html>
