@@ -13,7 +13,7 @@ class RadioController @Inject()(cc: ControllerComponents, lastFm: LastFm)(implic
   }
 
   def firstRays = Action {
-    Ok(views.html.mix("First Rays"))
+    Ok(views.html.firstrays("First Rays"))
   }
 
   def artists = Action {
