@@ -3,21 +3,22 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                               controllers.HomeController.index
 
 # An example controller showing how to write asynchronous code
-GET     /message                    controllers.AsyncController.message
+GET     /message                        controllers.AsyncController.message
 
 # My radio controller
-GET     /top-artists                controllers.RadioController.artists
-GET     /top-albums                 controllers.RadioController.albums
-GET     /top-tracks                 controllers.RadioController.tracks
-GET     /mix-for-friends            controllers.RadioController.mix
-GET     /first-rays                 controllers.RadioController.firstRays
+GET     /top-artists                    controllers.RadioController.artists
+GET     /top-albums                     controllers.RadioController.albums
+GET     /top-tracks                     controllers.RadioController.tracks
+GET     /mix-for-friends                controllers.RadioController.mix
+GET     /mix-for-friends/stream/:id     controllers.RadioController.stream(id: Int)
+GET     /first-rays                     controllers.RadioController.firstRays
 
 
 # Clicks controller
-GET     /click                      controllers.ClickController.click
+GET     /click                          controllers.ClickController.click
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(file)
+GET     /assets/*file                   controllers.Assets.versioned(file)
