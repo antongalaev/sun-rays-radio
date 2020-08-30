@@ -16,3 +16,14 @@ lazy val root = (project in file("."))
       "-Xfatal-warnings"
     )
   )
+
+// Config for assembly
+mainClass in assembly := Some("play.core.server.ProdServerStart")
+fullClasspath in assembly += Attributed.blank(PlayKeys.playPackageAssets.value)
+
+// Merge strategy for assembling conflicts
+assemblyMergeStrategy in assembly := {
+  case PathList("reference.conf") => MergeStrategy.concat
+  case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
+  case _ => MergeStrategy.first
+}
