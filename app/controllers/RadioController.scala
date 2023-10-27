@@ -29,8 +29,8 @@ class RadioController @Inject()(cc: ControllerComponents, lastFm: LastFm)(implic
     )
   }
 
-  def firstRays = Action {
-    Ok(views.html.firstrays("First Rays"))
+  def onAir = Action {
+    Ok(views.html.onair("On Air"))
   }
 
   def artists = Action {

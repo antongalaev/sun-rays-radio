@@ -14,7 +14,7 @@ GET     /top-albums                     controllers.RadioController.albums
 GET     /top-tracks                     controllers.RadioController.tracks
 GET     /mix-for-friends                controllers.RadioController.mix
 GET     /mix-for-friends/stream/:id     controllers.RadioController.stream(id: Int)
-GET     /first-rays                     controllers.RadioController.firstRays
+GET     /on-air                         controllers.RadioController.firstRays
 
 
 # Clicks controller
