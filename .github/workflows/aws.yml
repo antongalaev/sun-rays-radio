@@ -58,11 +58,12 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: sunraysradio
         IMAGE_TAG: ${{ github.sha }}
+        PLAY_HTTP_SECRET_KEY: ${{ secrets.PLAY_HTTP_SECRET }}
       run: |
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg PLAY_HTTP_SECRET="${{ secrets.PLAY_HTTP_SECRET }}" .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg PLAY_HTTP_SECRET='$PLAY_HTTP_SECRET_KEY' .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
