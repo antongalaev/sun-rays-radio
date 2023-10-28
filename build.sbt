@@ -3,7 +3,7 @@ lazy val root = (project in file("."))
   .settings(
     name := """sun-rays-radio""",
     version := "1.0",
-    scalaVersion := "2.13.1",
+    scalaVersion := "3.3.1",
     libraryDependencies ++= Seq(
       guice,
       "com.h2database" % "h2" % "1.4.199",
