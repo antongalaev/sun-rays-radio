@@ -18,6 +18,5 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: 21
-        cache: 'sbt'
     - name: Run tests
       run: sbt test
