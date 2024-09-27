@@ -2,8 +2,6 @@ package controllers
 
 import java.nio.file.Files
 
-import akka.stream.scaladsl.{FileIO, Source}
-import akka.util.ByteString
 import javax.inject.{Inject, Singleton}
 import play.api.http.HttpEntity
 import play.api.mvc.{AbstractController, ControllerComponents, ResponseHeader, Result}
@@ -15,18 +13,6 @@ class RadioController @Inject()(cc: ControllerComponents, lastFm: LastFm)(implic
 
   def mix = Action {
     Ok(views.html.mix("A Mix for Friends"))
-  }
-
-  def stream(id: Int) = Action {
-    val file                          = new java.io.File("/home/ubuntu/mixes/%d.mp3".format(id))
-    val path: java.nio.file.Path      = file.toPath
-    val source: Source[ByteString, _] = FileIO.fromPath(path)
-    val contentLength = Some(Files.size(file.toPath))
-
-    Result(
-      header = ResponseHeader(200, Map.empty),
-      body = HttpEntity.Streamed(source, contentLength, Some("audio/mpeg"))
-    )
   }
 
   def onAir = Action {
