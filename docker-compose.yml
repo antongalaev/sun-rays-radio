@@ -1,1 +1,42 @@
-app
+services:
+  api01: # 01
+    image: antongalaev/sunraysradio:latest
+    hostname: api01
+    expose:
+      - "9001"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: '0.5GB'
+
+  api02: # 02
+    image: antongalaev/sunraysradio:latest
+    hostname: api02
+    expose:
+      - "9001"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: '0.5GB'
+
+  nginx: # Load Balancer
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api01
+      - api02
+    ports:
+      - "9999:9999"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: '0.5GB'
+
+networks:
+  default:
+    driver: bridge
+    name: hackathon
