@@ -2,11 +2,8 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# An example controller showing a sample home page
+# A controller showing a home page
 GET     /                               controllers.HomeController.index
-
-# An example controller showing how to write asynchronous code
-GET     /message                        controllers.AsyncController.message
 
 # My radio controller
 GET     /top-artists                    controllers.RadioController.artists
@@ -14,7 +11,6 @@ GET     /top-albums                     controllers.RadioController.albums
 GET     /top-tracks                     controllers.RadioController.tracks
 GET     /mix-for-friends                controllers.RadioController.mix
 GET     /on-air                         controllers.RadioController.onAir
-
 
 # Clicks controller
 GET     /click                          controllers.ClickController.click
