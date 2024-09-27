@@ -39,4 +39,4 @@ services:
 networks:
   default:
     driver: bridge
-    name: hackathon
+    name: sunraysradio
