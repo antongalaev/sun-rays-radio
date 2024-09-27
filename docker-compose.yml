@@ -1,13 +1,9 @@
-version: '3.5'
-
 services:
   api01: # 01
-    image: repo/let-it-go-service:latest
+    image: antongalaev/sunraysradio:latest
     hostname: api01
-    depends_on:
-      - db
     expose:
-      - "9000"
+      - "9001"
     deploy:
       resources:
         limits:
@@ -15,12 +11,10 @@ services:
           memory: '0.5GB'
 
   api02: # 02
-    image: repo/let-it-go-service:latest
+    image: antongalaev/sunraysradio:latest
     hostname: api02
-    depends_on:
-      - db
     expose:
-      - "9000"
+      - "9001"
     deploy:
       resources:
         limits:
