@@ -7,8 +7,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.5'
-          memory: '0.5GB'
+          cpus: '0.8'
+          memory: '1GB'
 
   api02: # 02
     image: antongalaev/sunraysradio:latest
@@ -18,8 +18,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.5'
-          memory: '0.5GB'
+          cpus: '0.8'
+          memory: '1GB'
 
   nginx: # Load Balancer
     image: nginx:latest
@@ -33,8 +33,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.2'
-          memory: '0.5GB'
+          cpus: '0.4'
+          memory: '1GB'
 
 networks:
   default:
