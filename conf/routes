@@ -12,6 +12,9 @@ GET     /top-tracks                     controllers.RadioController.tracks
 GET     /mix-for-friends                controllers.RadioController.mix
 GET     /on-air                         controllers.RadioController.onAir
 
+# Contacts controller
+GET     /contacts                       controllers.ContactsController.contacts
+
 # Clicks controller
 GET     /click                          controllers.ClickController.click
 
