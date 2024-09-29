@@ -7,9 +7,9 @@
 <div class="album">
     @defining(album.getImageURL(ImageSize.EXTRALARGE)) { picture =>
         @if(picture.isEmpty) {
-            <img src="@assetsFinder.path("images/empty.jpg")">
+            <img src="@assetsFinder.path("images/empty.jpg")" loading="lazy">
         } else {
-            <img src="@picture" alt="@album.getName">
+            <img src="@picture" alt="@album.getName" loading="lazy">
         }
     }
     <p>@album.getArtist - @album.getName</p>
